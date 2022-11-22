@@ -7,7 +7,7 @@ struct TimerView: View {
     var body: some View {
         NavigationView {
             VStack {
-                timer
+                StopwatchView(stopwatch: vm.stopwatch)
                 Spacer()
                 HStack {
                     startButton(side: .left)
@@ -15,7 +15,6 @@ struct TimerView: View {
                     startButton(side: .right)
                 }
                 .padding(.horizontal)
-                
             }
             .padding()
             .navigationTitle("Cube Timer")
@@ -32,16 +31,8 @@ struct ContentView_Previews: PreviewProvider {
 
 extension TimerView {
     
-    private var timer: some View {
-        Text("\(vm.timeRemaining)")
-            .font(.system(size: height / 15))
-            .bold()
-            .foregroundColor(.green)
-            .onReceive(vm.timer) { _ in vm.startCount()  }
-    }
-    
     private func startButton(side: Side) -> some View {
-        Button(action: { vm.startOrStopTimer(side) }) {
+        Button(action: { vm.startOrStopStopwatch(side) }) {
             Circle()
                 .frame(width: width / 3.5, height: width / 3.5)
                 .foregroundColor(.yellow)

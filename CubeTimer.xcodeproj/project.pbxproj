@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E77BAB7292D3B4800C4086D /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77BAB6292D3B4800C4086D /* Stopwatch.swift */; };
+		0E77BAB9292D3C1D00C4086D /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */; };
 		0EB444A6292663AA004A8272 /* CubeTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB444A5292663AA004A8272 /* CubeTimerApp.swift */; };
 		0EB444A8292663AA004A8272 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB444A7292663AA004A8272 /* TimerView.swift */; };
 		0EB444AA292663AC004A8272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB444A9292663AC004A8272 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E77BAB6292D3B4800C4086D /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		0EB444A2292663AA004A8272 /* CubeTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubeTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB444A5292663AA004A8272 /* CubeTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTimerApp.swift; sourceTree = "<group>"; };
 		0EB444A7292663AA004A8272 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -34,6 +38,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E77BAB5292D3B3200C4086D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E77BAB6292D3B4800C4086D /* Stopwatch.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0E77BABA292D3C2600C4086D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0EB44499292663AA004A8272 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				0EB444B529267A5C004A8272 /* More */,
+				0E77BAB5292D3B3200C4086D /* Models */,
+				0E77BABA292D3C2600C4086D /* Views */,
 				0EB444B329267A4F004A8272 /* Screens */,
 			);
 			path = CubeTimer;
@@ -167,6 +189,8 @@
 				0EB444A8292663AA004A8272 /* TimerView.swift in Sources */,
 				0EB444B729267A72004A8272 /* TimerViewModel.swift in Sources */,
 				0EB444A6292663AA004A8272 /* CubeTimerApp.swift in Sources */,
+				0E77BAB9292D3C1D00C4086D /* StopwatchView.swift in Sources */,
+				0E77BAB7292D3B4800C4086D /* Stopwatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
