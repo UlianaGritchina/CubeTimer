@@ -9,6 +9,7 @@ class TimerViewModel: ObservableObject {
     
     @Published var timer: Timer?
     @Published var isStart = false
+    @Published var isShowingButtons = false
     @Published var stopwatch = Stopwatch(min: 0, seconds: 0, milliseconds: 0)
     
     func startOrStopStopwatch(_ side: Side) {
@@ -23,9 +24,10 @@ class TimerViewModel: ObservableObject {
     }
     
     private func startStopwatch() {
+        isShowingButtons = false
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [weak self] (_) in
             self?.stopwatch.milliseconds += 1
-            if self?.stopwatch.milliseconds == 60 {
+            if self?.stopwatch.milliseconds == 100 {
                 self?.stopwatch.milliseconds = 0
                 self?.stopwatch.seconds += 1
             }
@@ -39,6 +41,11 @@ class TimerViewModel: ObservableObject {
     func stopStopwatch() {
         timer?.invalidate()
         timer = nil
+        isShowingButtons = true
+    }
+    
+    func rest() {
+        stopwatch = Stopwatch(min: 0, seconds: 0, milliseconds: 0)
     }
     
 }
