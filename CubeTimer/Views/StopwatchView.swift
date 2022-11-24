@@ -3,19 +3,29 @@ import SwiftUI
 struct StopwatchView: View {
     let stopwatch: Stopwatch
     var body: some View {
-        HStack {
-            Text("\(stopwatch.min)")
-                .scaledToFit()
-            Text(":")
-            Text("\(stopwatch.seconds)")
-                .frame(width: 80)
-            Text(",")
-            Text("\(stopwatch.milliseconds)")
-                .frame(width: 80)
-            
-        }
-        .font(.system(size: 60))
-        .foregroundColor(.green)
+        RoundedRectangle(cornerRadius: 10)
+            .stroke(.gray)
+            .frame(width: UIScreen.main.bounds.width - 40)
+            .frame(height: 80)
+            .opacity(0.5)
+            .background(.ultraThinMaterial)
+            .cornerRadius(10)
+            .overlay(
+                HStack {
+                    Text("\(stopwatch.min)")
+                        .frame(width: 80)
+                    Text(":")
+                    Text("\(stopwatch.seconds)")
+                        .frame(width: 80)
+                    Text(",")
+                    Text("\(stopwatch.milliseconds)")
+                        .frame(width: 80)
+                }
+                    .font(.system(size: 50))
+                    .foregroundColor(.green)
+                    .padding()
+            )
+        
     }
 }
 

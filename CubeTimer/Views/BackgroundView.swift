@@ -5,7 +5,7 @@ struct BackgroundView: View {
         ZStack {
             Image("background")
                 .resizable()
-                .opacity(0.7)
+                .opacity(0.3)
                 .ignoresSafeArea()
                 .scaledToFill()
             

@@ -6,18 +6,30 @@ struct TimerView: View {
     private let height = UIScreen.main.bounds.height
     var body: some View {
         NavigationView {
-            VStack {
-                StopwatchView(stopwatch: vm.stopwatch)
-                Spacer()
-                HStack {
-                    startButton(side: .left)
+            ZStack {
+                BackgroundView()
+                VStack {
+                    StopwatchView(stopwatch: vm.stopwatch)
                     Spacer()
-                    startButton(side: .right)
+                    buttons
+                    
+                    HStack(spacing: width / 3) {
+                        startButton(side: .left)
+                        startButton(side: .right)
+                    }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
+                .padding()
+                .padding()
+                .navigationTitle("Cube Timer")
             }
-            .padding()
-            .navigationTitle("Cube Timer")
+            .toolbar {
+                NavigationLink(destination: ResultsView()) {
+                    Image(systemName: "list.bullet")
+                }
+            }
+            .preferredColorScheme(.dark)
+            
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -33,16 +45,34 @@ extension TimerView {
     
     private func startButton(side: Side) -> some View {
         Button(action: { vm.startOrStopStopwatch(side) }) {
-            Circle()
-                .frame(width: width / 3.5, height: width / 3.5)
-                .foregroundColor(.yellow)
-                .shadow(color: .gray.opacity(0.5), radius: 5, x: 3, y: 5)
-                .overlay {
-                    Image(systemName: "eject.fill")
-                        .font(.system(size: height / 35))
-                        .foregroundColor(.black)
-                }
+            ZStack {
+                Circle()
+                    .stroke(lineWidth: 2)
+                    .frame(width: width / 3.5, height: width / 3.5)
+                    .shadow(color: .black.opacity(0.5), radius: 5, x: 3, y: 5)
+                
+                Circle()
+                    .frame(width: width / 3.5 - 10, height: width / 3.5 - 10)
+                    .opacity(0)
+                    .background(.ultraThinMaterial)
+                    .clipShape(Circle())
+                    .overlay {
+                        Image(systemName: "eject.fill")
+                            .font(.system(size: height / 35))
+                            .foregroundColor(.white)
+                    }
+            }
         }
+    }
+    
+    private var buttons: some View {
+        VStack {
+            StrokeButtonView(title: "Save", color: .blue, action: {})
+                .padding()
+            StrokeButtonView(title: "Rest", color: .red, action: vm.rest)
+                .padding()
+        }
+        .opacity(vm.isShowingButtons ? 1 : 0)
     }
     
 }

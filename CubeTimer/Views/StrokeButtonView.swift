@@ -7,16 +7,16 @@ struct StrokeButtonView: View {
     var body: some View {
         Button(action: action) {
             RoundedRectangle(cornerRadius: 10)
-                .stroke()
-                .frame(maxWidth: 350)
+                .stroke(color)
+                .frame(maxWidth: 300)
                 .frame(height: 45)
-                .foregroundColor(color)
-                .overlay {
+                .cornerRadius(10)
+                .overlay(
                     Text(title)
-                        .foregroundColor(.white)
+                        .foregroundColor(color)
                         .font(.title2)
-                        .bold()
-                }
+                        .padding()
+                )
         }
     }
 }
