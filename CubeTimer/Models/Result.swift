@@ -1,6 +1,6 @@
 import Foundation
 
-struct Result {
-    let time: String
+struct Result: Codable, Hashable {
+    let time:String
     let date: String
 }

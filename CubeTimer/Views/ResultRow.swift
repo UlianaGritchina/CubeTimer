@@ -3,6 +3,7 @@ import SwiftUI
 struct ResultRow: View {
     private let width = UIScreen.main.bounds.width
     private let height = UIScreen.main.bounds.height
+    let result: Result
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
             .stroke(.gray)
@@ -13,9 +14,9 @@ struct ResultRow: View {
             .overlay(
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("0:20,5")
+                        Text(result.time)
                             .font(.title)
-                        Text("Date")
+                        Text(result.date)
                             .font(.title2)
                     }
                     Spacer()
@@ -27,6 +28,6 @@ struct ResultRow: View {
 
 struct ResultRow_Previews: PreviewProvider {
     static var previews: some View {
-        ResultRow()
+        ResultRow(result: Result(time: "20 : 03 , 45", date: "11,12,12"))
     }
 }

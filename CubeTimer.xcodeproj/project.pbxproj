@@ -20,7 +20,22 @@
 		0EB444AA292663AC004A8272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB444A9292663AC004A8272 /* Assets.xcassets */; };
 		0EB444AD292663AC004A8272 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB444AC292663AC004A8272 /* Preview Assets.xcassets */; };
 		0EB444B729267A72004A8272 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB444B629267A72004A8272 /* TimerViewModel.swift */; };
+		0ED46DD3292FAD77001DD1CC /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED46DD2292FAD77001DD1CC /* StartButtonView.swift */; };
+		0ED46DD6292FAEF7001DD1CC /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED46DD5292FAEF7001DD1CC /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0EC28F3D29309C2F00DC6786 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E61ED4D292DFD9C00465BD6 /* StrokeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeButtonView.swift; sourceTree = "<group>"; };
@@ -37,6 +52,10 @@
 		0EB444A9292663AC004A8272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB444AC292663AC004A8272 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EB444B629267A72004A8272 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		0EC28F2929309C2E00DC6786 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		0EC28F2B29309C2E00DC6786 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		0ED46DD2292FAD77001DD1CC /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		0ED46DD5292FAEF7001DD1CC /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +83,7 @@
 			children = (
 				0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */,
 				0E61ED4D292DFD9C00465BD6 /* StrokeButtonView.swift */,
+				0ED46DD2292FAD77001DD1CC /* StartButtonView.swift */,
 				0E97ED1A292E4FC300EF4204 /* BackgroundView.swift */,
 				0E97ED1C292E500A00EF4204 /* ResultRow.swift */,
 			);
@@ -83,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				0EB444A4292663AA004A8272 /* CubeTimer */,
+				0EC28F2829309C2E00DC6786 /* Frameworks */,
 				0EB444A3292663AA004A8272 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +119,7 @@
 		0EB444A4292663AA004A8272 /* CubeTimer */ = {
 			isa = PBXGroup;
 			children = (
+				0ED46DD4292FAEE5001DD1CC /* Managers */,
 				0EB444B529267A5C004A8272 /* More */,
 				0E77BAB5292D3B3200C4086D /* Models */,
 				0E77BABA292D3C2600C4086D /* Views */,
@@ -142,6 +164,23 @@
 			path = More;
 			sourceTree = "<group>";
 		};
+		0EC28F2829309C2E00DC6786 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EC28F2929309C2E00DC6786 /* WidgetKit.framework */,
+				0EC28F2B29309C2E00DC6786 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0ED46DD4292FAEE5001DD1CC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0ED46DD5292FAEF7001DD1CC /* UserDefaultsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +191,7 @@
 				0EB4449E292663AA004A8272 /* Sources */,
 				0EB4449F292663AA004A8272 /* Frameworks */,
 				0EB444A0292663AA004A8272 /* Resources */,
+				0EC28F3D29309C2F00DC6786 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -169,7 +209,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					0EB444A1292663AA004A8272 = {
@@ -221,8 +261,10 @@
 				0E61ED4E292DFD9D00465BD6 /* StrokeButtonView.swift in Sources */,
 				0E77BAB9292D3C1D00C4086D /* StopwatchView.swift in Sources */,
 				0E97ED19292E4FA400EF4204 /* Result.swift in Sources */,
+				0ED46DD3292FAD77001DD1CC /* StartButtonView.swift in Sources */,
 				0E97ED1F292E515800EF4204 /* ResultsViewModel.swift in Sources */,
 				0E77BAB7292D3B4800C4086D /* Stopwatch.swift in Sources */,
+				0ED46DD6292FAEF7001DD1CC /* UserDefaultsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +409,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ugritchina-icloud.com.CubeTimer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -397,6 +442,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ugritchina-icloud.com.CubeTimer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

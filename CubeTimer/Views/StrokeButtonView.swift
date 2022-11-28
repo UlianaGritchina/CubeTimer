@@ -7,7 +7,7 @@ struct StrokeButtonView: View {
     var body: some View {
         Button(action: action) {
             RoundedRectangle(cornerRadius: 10)
-                .stroke(color)
+                .stroke(color, lineWidth: 2)
                 .frame(maxWidth: 300)
                 .frame(height: 45)
                 .cornerRadius(10)

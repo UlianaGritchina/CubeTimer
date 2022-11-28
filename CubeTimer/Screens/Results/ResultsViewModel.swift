@@ -1,5 +1,20 @@
-import Foundation
+import SwiftUI
 
 class ResultsViewModel: ObservableObject {
-    let results = ["","","","","","",""]
+    var results: [Result] = []
+    
+    init() {
+        getResults()
+    }
+    
+    func getResults() {
+        guard
+            let data = UserDefaults.standard.data(forKey: "results"),
+            let savedResults = try? JSONDecoder().decode([Result].self, from: data)
+        else { return }
+        
+        results = savedResults.reversed()
+    }
+    
+    
 }

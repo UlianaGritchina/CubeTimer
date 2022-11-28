@@ -7,17 +7,17 @@ struct TimerView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                BackgroundView()
+                BackgroundView(color: .green)
                 VStack {
                     StopwatchView(stopwatch: vm.stopwatch)
                     Spacer()
-                    buttons
+                    buttons.padding(.bottom)
                     
-                    HStack(spacing: width / 3) {
-                        startButton(side: .left)
-                        startButton(side: .right)
+                    HStack {
+                        StartButtonView(action: vm.startOrStopStopwatch)
+                        Spacer()
+                        StartButtonView(action: {})
                     }
-                    .padding(.horizontal)
                 }
                 .padding()
                 .padding()
@@ -43,31 +43,9 @@ struct ContentView_Previews: PreviewProvider {
 
 extension TimerView {
     
-    private func startButton(side: Side) -> some View {
-        Button(action: { vm.startOrStopStopwatch(side) }) {
-            ZStack {
-                Circle()
-                    .stroke(lineWidth: 2)
-                    .frame(width: width / 3.5, height: width / 3.5)
-                    .shadow(color: .black.opacity(0.5), radius: 5, x: 3, y: 5)
-                
-                Circle()
-                    .frame(width: width / 3.5 - 10, height: width / 3.5 - 10)
-                    .opacity(0)
-                    .background(.ultraThinMaterial)
-                    .clipShape(Circle())
-                    .overlay {
-                        Image(systemName: "eject.fill")
-                            .font(.system(size: height / 35))
-                            .foregroundColor(.white)
-                    }
-            }
-        }
-    }
-    
     private var buttons: some View {
         VStack {
-            StrokeButtonView(title: "Save", color: .blue, action: {})
+            StrokeButtonView(title: "Save", color: .blue, action: vm.addResult)
                 .padding()
             StrokeButtonView(title: "Rest", color: .red, action: vm.rest)
                 .padding()

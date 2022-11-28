@@ -5,7 +5,7 @@ struct StopwatchView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
             .stroke(.gray)
-            .frame(width: UIScreen.main.bounds.width - 40)
+            .frame(maxWidth: 600)
             .frame(height: 80)
             .opacity(0.5)
             .background(.ultraThinMaterial)
@@ -22,7 +22,7 @@ struct StopwatchView: View {
                         .frame(width: 80)
                 }
                     .font(.system(size: 50))
-                    .foregroundColor(.green)
+                    .foregroundColor(.white)
                     .padding()
             )
         

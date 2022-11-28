@@ -5,12 +5,15 @@ struct ResultsView: View {
     private let width = UIScreen.main.bounds.width
     private let height = UIScreen.main.bounds.height
     var body: some View {
-        ScrollView {
-            ForEach((vm.results), id: \.self) {_ in
-                ResultRow().padding()
+        ZStack {
+            BackgroundView(color: .blue)
+            ScrollView {
+                ForEach((vm.results), id: \.self) { result in
+                    ResultRow(result: result).padding()
+                }
             }
+            .navigationTitle("Results")
         }
-        .navigationTitle("Results")
     }
 }
 
