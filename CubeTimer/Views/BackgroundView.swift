@@ -1,23 +1,17 @@
 import SwiftUI
 
 struct BackgroundView: View {
+    let color: Color
     var body: some View {
         ZStack {
-            Image("background")
-                .resizable()
-                .opacity(0.3)
+            LinearGradient(gradient: Gradient(colors: [color.opacity(0.8), .black]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
-                .scaledToFill()
-            
-            Rectangle()
-                .opacity(0)
-                .background(.ultraThinMaterial)
         }
     }
 }
 
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView()
+        BackgroundView(color: .green)
     }
 }
