@@ -1,20 +1,20 @@
 import SwiftUI
 
-struct StrokeButtonView: View {
+struct ButtonView: View {
     let title: String
     let color: Color
     let action: () -> ()
     var body: some View {
         Button(action: action) {
             RoundedRectangle(cornerRadius: 10)
-                .stroke(color, lineWidth: 2)
+                .foregroundColor(color)
                 .frame(maxWidth: 300)
                 .frame(height: 45)
                 .cornerRadius(10)
                 .overlay(
                     Text(title)
-                        .foregroundColor(color)
-                        .font(.title2)
+                        .foregroundColor(.white)
+                        .font(.headline)
                         .padding()
                 )
         }
@@ -23,6 +23,6 @@ struct StrokeButtonView: View {
 
 struct StrokeButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        StrokeButtonView(title: "title", color: .orange, action: {})
+        ButtonView(title: "title", color: .orange, action: {})
     }
 }

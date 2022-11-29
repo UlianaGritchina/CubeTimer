@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E61ED4E292DFD9D00465BD6 /* StrokeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E61ED4D292DFD9C00465BD6 /* StrokeButtonView.swift */; };
+		0E61ED4E292DFD9D00465BD6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E61ED4D292DFD9C00465BD6 /* ButtonView.swift */; };
 		0E77BAB7292D3B4800C4086D /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77BAB6292D3B4800C4086D /* Stopwatch.swift */; };
 		0E77BAB9292D3C1D00C4086D /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */; };
 		0E97ED16292E4C7A00EF4204 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97ED15292E4C7A00EF4204 /* ResultsView.swift */; };
@@ -38,7 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0E61ED4D292DFD9C00465BD6 /* StrokeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeButtonView.swift; sourceTree = "<group>"; };
+		0E61ED4D292DFD9C00465BD6 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		0E77BAB6292D3B4800C4086D /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		0E97ED15292E4C7A00EF4204 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */,
-				0E61ED4D292DFD9C00465BD6 /* StrokeButtonView.swift */,
+				0E61ED4D292DFD9C00465BD6 /* ButtonView.swift */,
 				0ED46DD2292FAD77001DD1CC /* StartButtonView.swift */,
 				0E97ED1A292E4FC300EF4204 /* BackgroundView.swift */,
 				0E97ED1C292E500A00EF4204 /* ResultRow.swift */,
@@ -258,7 +258,7 @@
 				0EB444A6292663AA004A8272 /* CubeTimerApp.swift in Sources */,
 				0E97ED16292E4C7A00EF4204 /* ResultsView.swift in Sources */,
 				0E97ED1D292E500A00EF4204 /* ResultRow.swift in Sources */,
-				0E61ED4E292DFD9D00465BD6 /* StrokeButtonView.swift in Sources */,
+				0E61ED4E292DFD9D00465BD6 /* ButtonView.swift in Sources */,
 				0E77BAB9292D3C1D00C4086D /* StopwatchView.swift in Sources */,
 				0E97ED19292E4FA400EF4204 /* Result.swift in Sources */,
 				0ED46DD3292FAD77001DD1CC /* StartButtonView.swift in Sources */,

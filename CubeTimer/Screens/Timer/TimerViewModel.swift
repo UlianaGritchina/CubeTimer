@@ -6,9 +6,7 @@ class TimerViewModel: ObservableObject {
     @Published var isStart = false
     @Published var isShowingButtons = false
     @Published var stopwatch = Stopwatch(min: 0, seconds: 0, milliseconds: 0)
-    @Published var results: [Result] = [] {
-        didSet { saveResult() }
-    }
+    @Published var results: [Result] = []
     
     private var result: Result = Result(time: "", date: "")
     
@@ -25,13 +23,13 @@ class TimerViewModel: ObservableObject {
         }
     }
     
-    private func getResults() {
+    func getResults() {
         guard
             let data = UserDefaults.standard.data(forKey: "results"),
             let savedResults = try? JSONDecoder().decode([Result].self, from: data)
         else { return }
         
-        results = savedResults.reversed()
+        results = savedResults
     }
     
     private func startStopwatch() {
@@ -57,16 +55,16 @@ class TimerViewModel: ObservableObject {
     
     func rest() {
         stopwatch = Stopwatch(min: 0, seconds: 0, milliseconds: 0)
+        isShowingButtons = false
     }
     
     private func saveResult() {
-        if let encodedData = try? JSONEncoder().encode(results) {
-            UserDefaults.standard.set(encodedData, forKey: "results")
-        }
+        UserDefaultsManager.shared.save(results)
     }
     
     func addResult() {
         results.append(Result(time: formatResultString(), date: getFormattedDate(date: Date())))
+        UserDefaultsManager.shared.save(results)
     }
     
     private func formatResultString() -> String {
@@ -74,7 +72,7 @@ class TimerViewModel: ObservableObject {
     }
     
     func getFormattedDate(date: Date) -> String {
-        let format = "MMM dd yyyy   HH:mm"
+        let format = "MMM dd yyyy   HH:mm:ss"
         let dateformat = DateFormatter()
         dateformat.dateFormat = format
         return dateformat.string(from: date)

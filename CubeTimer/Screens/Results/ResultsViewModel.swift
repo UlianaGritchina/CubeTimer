@@ -1,7 +1,7 @@
 import SwiftUI
 
 class ResultsViewModel: ObservableObject {
-    var results: [Result] = []
+    @Published var results: [Result] = []
     
     init() {
         getResults()
@@ -14,6 +14,15 @@ class ResultsViewModel: ObservableObject {
         else { return }
         
         results = savedResults.reversed()
+    }
+    
+    func delete(_ result: Result) {
+        results = results.filter { $0 != result }
+        saveResult()
+    }
+    
+    private func saveResult() {
+        UserDefaultsManager.shared.save(results)
     }
     
     
