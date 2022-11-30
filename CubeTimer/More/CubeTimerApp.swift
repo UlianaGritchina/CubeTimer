@@ -4,7 +4,21 @@ import SwiftUI
 struct CubeTimerApp: App {
     var body: some Scene {
         WindowGroup {
-            TimerView()
+            TabView {
+                TimerView()
+                    .tabItem {
+                        Label("Main", systemImage: "clock")
+                    }
+                ResultsView(deleteAction: {})
+                    .tabItem {
+                        Label("Results", systemImage: "list.dash")
+                    }
+                
+                Color.blue
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
+            }
         }
     }
 }
