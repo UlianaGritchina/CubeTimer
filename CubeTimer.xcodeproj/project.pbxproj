@@ -17,6 +17,7 @@
 		0E97ED1B292E4FC300EF4204 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97ED1A292E4FC300EF4204 /* BackgroundView.swift */; };
 		0E97ED1D292E500A00EF4204 /* ResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97ED1C292E500A00EF4204 /* ResultRow.swift */; };
 		0E97ED1F292E515800EF4204 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97ED1E292E515800EF4204 /* ResultsViewModel.swift */; };
+		0E9BFBFB293732DB00BC4592 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E9BFBFA293732DB00BC4592 /* Launch Screen.storyboard */; };
 		0EB444A6292663AA004A8272 /* CubeTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB444A5292663AA004A8272 /* CubeTimerApp.swift */; };
 		0EB444A8292663AA004A8272 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB444A7292663AA004A8272 /* TimerView.swift */; };
 		0EB444AA292663AC004A8272 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB444A9292663AC004A8272 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		0EB444B729267A72004A8272 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB444B629267A72004A8272 /* TimerViewModel.swift */; };
 		0ED46DD3292FAD77001DD1CC /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED46DD2292FAD77001DD1CC /* StartButtonView.swift */; };
 		0ED46DD6292FAEF7001DD1CC /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED46DD5292FAEF7001DD1CC /* UserDefaultsManager.swift */; };
+		0ED7709329379911001DA050 /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED7709229379911001DA050 /* StarterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +52,7 @@
 		0E97ED1A292E4FC300EF4204 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		0E97ED1C292E500A00EF4204 /* ResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRow.swift; sourceTree = "<group>"; };
 		0E97ED1E292E515800EF4204 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
+		0E9BFBFA293732DB00BC4592 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0EB444A2292663AA004A8272 /* CubeTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CubeTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB444A5292663AA004A8272 /* CubeTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTimerApp.swift; sourceTree = "<group>"; };
 		0EB444A7292663AA004A8272 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		0EC28F2B29309C2E00DC6786 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		0ED46DD2292FAD77001DD1CC /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		0ED46DD5292FAEF7001DD1CC /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		0ED7709229379911001DA050 /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 		0EB444B329267A4F004A8272 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0ED77091293798FD001DA050 /* Starter */,
 				0EB444B429267A57004A8272 /* Timer */,
 				0E97ED17292E4F6300EF4204 /* Results */,
 			);
@@ -166,6 +171,7 @@
 				0EB444AB292663AC004A8272 /* Preview Content */,
 				0EB444A5292663AA004A8272 /* CubeTimerApp.swift */,
 				0EB444A9292663AC004A8272 /* Assets.xcassets */,
+				0E9BFBFA293732DB00BC4592 /* Launch Screen.storyboard */,
 			);
 			path = More;
 			sourceTree = "<group>";
@@ -185,6 +191,14 @@
 				0ED46DD5292FAEF7001DD1CC /* UserDefaultsManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		0ED77091293798FD001DA050 /* Starter */ = {
+			isa = PBXGroup;
+			children = (
+				0ED7709229379911001DA050 /* StarterView.swift */,
+			);
+			path = Starter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E9BFBFB293732DB00BC4592 /* Launch Screen.storyboard in Resources */,
 				0EB444AD292663AC004A8272 /* Preview Assets.xcassets in Resources */,
 				0EB444AA292663AC004A8272 /* Assets.xcassets in Resources */,
 			);
@@ -270,6 +285,7 @@
 				0ED46DD3292FAD77001DD1CC /* StartButtonView.swift in Sources */,
 				0E97ED1F292E515800EF4204 /* ResultsViewModel.swift in Sources */,
 				0E89B39129364C1B0087B599 /* SavedView.swift in Sources */,
+				0ED7709329379911001DA050 /* StarterView.swift in Sources */,
 				0E77BAB7292D3B4800C4086D /* Stopwatch.swift in Sources */,
 				0ED46DD6292FAEF7001DD1CC /* UserDefaultsManager.swift in Sources */,
 				0E54A3F22935DB8B008BC732 /* BestResultRow.swift in Sources */,
@@ -407,6 +423,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -440,6 +457,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
