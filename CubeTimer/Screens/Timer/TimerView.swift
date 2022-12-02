@@ -4,32 +4,34 @@ struct TimerView: View {
     @StateObject var vm = TimerViewModel()
     @Environment(\.verticalSizeClass) var heightClass: UserInterfaceSizeClass?
     var body: some View {
-        NavigationView {
-            GeometryReader { geometry in
-                ZStack {
-                    BackgroundView(color: .green)
-                    VStack {
-                        StopwatchView(stopwatch: vm.stopwatch)
-                        Spacer()
-                        if heightClass == .regular {
-                            portraitArientationStartButtons(geometry: geometry)
-                        } else if heightClass == .compact {
-                            landscapeStartButtons(geometry: geometry)
+        ZStack {
+            NavigationView {
+                GeometryReader { geometry in
+                    ZStack {
+                        VStack {
+                            StopwatchView(stopwatch: vm.stopwatch)
+                            Spacer()
+                            if heightClass == .regular {
+                                portraitArientationStartButtons(geometry: geometry)
+                            } else if heightClass == .compact {
+                                landscapeStartButtons(geometry: geometry)
+                            }
                         }
+                        .padding()
+                        .navigationTitle("Cube Timer")
                     }
-                    .padding()
-                    .navigationTitle("Cube Timer")
+                    SavedView().opacity(vm.isShowingSaveView ? 1 : 0)
                 }
+                .preferredColorScheme(.dark)
+                
             }
-            .toolbar {
-                NavigationLink(destination: ResultsView(deleteAction: vm.getResults)) {
-                    Image(systemName: "list.bullet")
-                }
+            .onAppear {
+                vm.getResults()
+               
             }
-            .preferredColorScheme(.dark)
+            .navigationViewStyle(StackNavigationViewStyle())
             
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -42,12 +44,14 @@ struct ContentView_Previews: PreviewProvider {
 extension TimerView {
     
     private var buttons: some View {
-        VStack {
-            ButtonView(title: "Save", color: .blue, action: vm.addResult)
-                .padding()
-            ButtonView(title: "Rest", color: .red, action: vm.rest)
-                .padding()
+        HStack {
+            ButtonView(title: "Save", color: Color("Blue"), action: vm.saveResult)
+                .padding(.trailing)
+            Spacer()
+            ButtonView(title: "Rest", color:  Color("Red"), action: vm.rest)
+                .padding(.leading)
         }
+        .padding(.bottom)
         .opacity(vm.isShowingButtons ? 1 : 0)
     }
     
@@ -81,7 +85,7 @@ extension TimerView {
                 : geometry.size.width / 3
             )
             Spacer()
-            buttons
+            buttons.padding(.horizontal)
             Spacer()
             StartButtonView(
                 action: {},

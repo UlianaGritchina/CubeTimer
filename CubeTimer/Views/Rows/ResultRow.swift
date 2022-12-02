@@ -9,7 +9,7 @@ struct ResultRow: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
             .stroke(.gray)
-            .frame(width: width - 80, height: 80)
+            .frame(width: width - 40, height: 80)
             .opacity(0.5)
             .background(.ultraThinMaterial)
             .cornerRadius(10)

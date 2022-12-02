@@ -59,8 +59,6 @@
 		0EB444A9292663AC004A8272 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB444AC292663AC004A8272 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0EB444B629267A72004A8272 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
-		0EC28F2929309C2E00DC6786 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		0EC28F2B29309C2E00DC6786 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		0ED46DD2292FAD77001DD1CC /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		0ED46DD5292FAEF7001DD1CC /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		0ED7709229379911001DA050 /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
@@ -89,13 +87,11 @@
 		0E77BABA292D3C2600C4086D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */,
-				0E61ED4D292DFD9C00465BD6 /* ButtonView.swift */,
-				0ED46DD2292FAD77001DD1CC /* StartButtonView.swift */,
+				0EE68C8129387FF4006A0C24 /* Rows */,
+				0EE68C8229388003006A0C24 /* Buttons */,
 				0E89B39029364C1B0087B599 /* SavedView.swift */,
+				0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */,
 				0E97ED1A292E4FC300EF4204 /* BackgroundView.swift */,
-				0E54A3F12935DB8B008BC732 /* BestResultRow.swift */,
-				0E97ED1C292E500A00EF4204 /* ResultRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				0EB444A4292663AA004A8272 /* CubeTimer */,
-				0EC28F2829309C2E00DC6786 /* Frameworks */,
 				0EB444A3292663AA004A8272 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -176,15 +171,6 @@
 			path = More;
 			sourceTree = "<group>";
 		};
-		0EC28F2829309C2E00DC6786 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0EC28F2929309C2E00DC6786 /* WidgetKit.framework */,
-				0EC28F2B29309C2E00DC6786 /* SwiftUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		0ED46DD4292FAEE5001DD1CC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +185,24 @@
 				0ED7709229379911001DA050 /* StarterView.swift */,
 			);
 			path = Starter;
+			sourceTree = "<group>";
+		};
+		0EE68C8129387FF4006A0C24 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				0E97ED1C292E500A00EF4204 /* ResultRow.swift */,
+				0E54A3F12935DB8B008BC732 /* BestResultRow.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
+		0EE68C8229388003006A0C24 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				0E61ED4D292DFD9C00465BD6 /* ButtonView.swift */,
+				0ED46DD2292FAD77001DD1CC /* StartButtonView.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

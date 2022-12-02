@@ -5,6 +5,7 @@ class TimerViewModel: ObservableObject {
     @Published var timer: Timer?
     @Published var isStart = false
     @Published var isShowingButtons = false
+    @Published var isShowingSaveView = false
     @Published var stopwatch = Stopwatch(min: 0, seconds: 0, milliseconds: 0)
     @Published var results: [Result] = []
     
@@ -58,13 +59,17 @@ class TimerViewModel: ObservableObject {
         isShowingButtons = false
     }
     
-    private func saveResult() {
-        UserDefaultsManager.shared.save(results)
-    }
-    
-    func addResult() {
+    func saveResult() {
         results.append(Result(time: formatResultString(), date: getFormattedDate(date: Date())))
         UserDefaultsManager.shared.save(results)
+        withAnimation {
+            isShowingSaveView = true
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            withAnimation {
+                self.isShowingSaveView = false
+            }
+        }
     }
     
     private func formatResultString() -> String {
@@ -72,7 +77,7 @@ class TimerViewModel: ObservableObject {
     }
     
     func getFormattedDate(date: Date) -> String {
-        let format = "MMM dd yyyy   HH:mm:ss"
+        let format = "MMM dd yyyy   HH:mm"
         let dateformat = DateFormatter()
         dateformat.dateFormat = format
         return dateformat.string(from: date)

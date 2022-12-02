@@ -14,7 +14,6 @@ struct StopwatchView: View {
                 .frame(width: 80)
         }
         .font(.system(size: 50))
-        .foregroundColor(.white)
         .padding()
         .background {
             RoundedRectangle(cornerRadius: 10)

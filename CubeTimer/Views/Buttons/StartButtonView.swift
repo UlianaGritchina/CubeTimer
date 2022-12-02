@@ -9,20 +9,17 @@ struct StartButtonView: View {
                 Circle()
                     .stroke(lineWidth: 2)
                     .foregroundColor(.blue)
-                    .frame(width:  width,
-                           height:  width)
+                    .frame(width: width, height: width)
                     .shadow(color: .black.opacity(0.5), radius: 5, x: 3, y: 5)
                 
                 Circle()
-                    .frame(width:  width - 10,
-                           height:  width - 10)
+                    .frame(width:  width - 10, height: width - 10)
                     .opacity(0)
                     .background(.ultraThinMaterial)
                     .clipShape(Circle())
                     .overlay {
                         Image(systemName: "eject.fill")
                             .font(.title2)
-                            .foregroundColor(.white)
                     }
             }
         }
