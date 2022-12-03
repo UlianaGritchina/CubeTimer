@@ -27,10 +27,8 @@ struct TimerView: View {
             }
             .onAppear {
                 vm.getResults()
-               
             }
             .navigationViewStyle(StackNavigationViewStyle())
-            
         }
     }
 }

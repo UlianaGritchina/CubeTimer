@@ -22,7 +22,7 @@ struct StarterView: View {
                         Label("Results", systemImage: "list.dash")
                     }
                 
-                Color.blue
+                SettingsView()
                     .tabItem {
                         Label("Settings", systemImage: "gear")
                     }
