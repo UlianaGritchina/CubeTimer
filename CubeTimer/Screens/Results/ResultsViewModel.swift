@@ -37,8 +37,10 @@ class ResultsViewModel: ObservableObject {
             bestResult = nil
             return
         }
+    
         bestResult = lastResult
         for result in results {
+            let a = result.times[0]
             if result.time < bestResult?.time ?? "" {
                 bestResult = result
             }

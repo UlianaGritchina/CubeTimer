@@ -10,6 +10,10 @@ struct TimerView: View {
                     ZStack {
                         VStack {
                             StopwatchView(stopwatch: vm.stopwatch)
+                            Text(vm.scramble)
+                                .font(.title2)
+                                .multilineTextAlignment(.center)
+                                .padding()
                             Spacer()
                             if heightClass == .regular {
                                 portraitArientationStartButtons(geometry: geometry)
@@ -27,6 +31,7 @@ struct TimerView: View {
             }
             .onAppear {
                 vm.getResults()
+                vm.setScrambel()
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }

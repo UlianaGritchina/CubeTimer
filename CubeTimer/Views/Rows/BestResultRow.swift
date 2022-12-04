@@ -3,6 +3,7 @@ import SwiftUI
 
 struct BestResultRow: View {
     let result: Result
+    let colors: [Color] = [.red, .blue, .white, .yellow, .orange, .green]
     private let width = UIScreen.main.bounds.width
     private let height = UIScreen.main.bounds.height
     var body: some View {
@@ -13,11 +14,9 @@ struct BestResultRow: View {
             .cornerRadius(10)
             .overlay {
                 ZStack {
-                    LinearGradient(colors: [.yellow, .red, .green, .white, .blue], startPoint: .leading, endPoint: .trailing)
-                        .mask {
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(lineWidth: 0.7)
-                        }
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(lineWidth: 0.7)
+                        .foregroundColor(colors.randomElement() ?? .purple)
                     VStack {
                         Text("Best result")
                             .font(.headline)
@@ -39,6 +38,6 @@ struct BestResultRow: View {
 
 struct BestResultRow_Previews: PreviewProvider {
     static var previews: some View {
-        BestResultRow(result: Result(time: "time", date: "date"))
+        BestResultRow(result: Result(time: "time", date: "date", times: []))
     }
 }

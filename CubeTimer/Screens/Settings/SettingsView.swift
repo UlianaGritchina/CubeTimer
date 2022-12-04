@@ -13,34 +13,84 @@ enum Cube: String {
     case five = "5x5"
 }
 
+enum Language: String, Codable {
+    case eng = "Eng"
+    case rus = "Rus"
+    case spain = "Es"
+}
+
+class SettingsViewModel: ObservableObject {
+    
+    @Published var selectedLeng: Language = .eng
+    @Published var scramble = UserDefaultsManager.shared.getIsScrsmbrl()
+    
+    init() {
+        setLanguage()
+    }
+    
+    func saveScrubble(_ value: Bool) {
+        UserDefaultsManager.shared.setIsScrambel(scramble)
+    }
+    
+    func setLanguage() {
+        selectedLeng = UserDefaultsManager.shared.getLanguage()
+    }
+    
+    func getMainTitle() -> String {
+        switch selectedLeng {
+        case .eng: return "Settings"
+        case .rus: return "Настройки"
+        case .spain: return "Ajustes"
+        }
+    }
+    
+    func getLengTitle() -> String {
+        switch selectedLeng {
+        case .eng: return "Language"
+        case .rus: return "Язык"
+        case .spain: return "Idioma"
+        }
+    }
+    
+    func getScrubleTitle() -> String {
+        switch selectedLeng {
+        case .eng: return "Show scramble"
+        case .rus: return "Показывать скрамбл"
+        case .spain: return "Mostrar scramble"
+        }
+    }
+    
+}
+
 struct SettingsView: View {
-    @State private var scramble = false
-    @State private var selectedCube: Cube = .three
+    @StateObject var vm = SettingsViewModel()
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
     var body: some View {
         NavigationView {
             VStack {
-                Toggle("Show scramble", isOn: $scramble)
-                
+                Toggle(vm.getScrubleTitle(), isOn: $vm.scramble)
+                    .onChange(of: vm.scramble) { newValue in
+                        vm.saveScrubble(newValue)
+                    }
                 HStack {
-                    Text("Cube").font(.system(size: height / 30))
+                    Text(vm.getLengTitle()).font(.system(size: height / 30))
                     Spacer()
                 }
                 
                 HStack() {
-                    CubeTypeView(type: .three, selected: $selectedCube, color: .blue)
+                    LanguageView(type: .eng, selected: $vm.selectedLeng, color: .blue)
                         .padding()
-                    CubeTypeView(type: .fore, selected: $selectedCube, color: .red)
+                    LanguageView(type: .rus, selected: $vm.selectedLeng, color: .green)
                         .padding()
-                    CubeTypeView(type: .five, selected: $selectedCube, color: .green)
+                    LanguageView(type: .spain, selected: $vm.selectedLeng, color: .orange)
                         .padding()
                 }
-                    
+                
                 Spacer()
             }
             .padding()
-            .navigationTitle("Settings")
+            .navigationTitle(vm.getMainTitle())
         }
         .preferredColorScheme(.dark)
     }

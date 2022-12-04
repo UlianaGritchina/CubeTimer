@@ -8,11 +8,14 @@ class TimerViewModel: ObservableObject {
     @Published var isShowingSaveView = false
     @Published var stopwatch = Stopwatch(min: 0, seconds: 0, milliseconds: 0)
     @Published var results: [Result] = []
+    @Published var scramble = ""
+    @Published var language: Language = .eng
     
-    private var result: Result = Result(time: "", date: "")
+    private var result: Result = Result(time: "", date: "", times: [])
     
     init() {
         getResults()
+        setLanguage()
     }
     
     func startOrStopStopwatch() {
@@ -31,6 +34,18 @@ class TimerViewModel: ObservableObject {
         else { return }
         
         results = savedResults
+    }
+    
+    func setLanguage() {
+        language = UserDefaultsManager.shared.getLanguage()
+    }
+    
+    func setScrambel() {
+        if UserDefaultsManager.shared.getIsScrsmbrl() {
+            scramble = ScrambleManager.instance.getRandomScrambel()
+        } else {
+            scramble = ""
+        }
     }
     
     private func startStopwatch() {
@@ -57,10 +72,15 @@ class TimerViewModel: ObservableObject {
     func rest() {
         stopwatch = Stopwatch(min: 0, seconds: 0, milliseconds: 0)
         isShowingButtons = false
+        scramble = ScrambleManager.instance.getRandomScrambel()
     }
     
     func saveResult() {
-        results.append(Result(time: formatResultString(), date: getFormattedDate(date: Date())))
+        results.append(Result(
+            time: formatResultString(),
+            date: getFormattedDate(date: Date()),
+            times: [Int(stopwatch.min), Int(stopwatch.seconds), Int(stopwatch.milliseconds)])
+        )
         UserDefaultsManager.shared.save(results)
         withAnimation {
             isShowingSaveView = true

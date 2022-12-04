@@ -45,7 +45,7 @@ struct ResultRow: View {
 struct ResultRow_Previews: PreviewProvider {
     static var previews: some View {
         ResultRow(
-            result: Result(time: "20 : 03 , 45", date: "11,12,12"),
+            result: Result(time: "20 : 03 , 45", date: "11,12,12", times: []),
             deleteAction: {}
         )
     }

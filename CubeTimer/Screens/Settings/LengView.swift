@@ -1,22 +1,16 @@
-//
-//  CubeTypeView.swift
-//  CubeTimer
-//
-//  Created by Ульяна Гритчина on 03.12.2022.
-//
-
 import SwiftUI
 
-struct CubeTypeView: View {
+struct LanguageView: View {
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
-    let type: Cube
-    @Binding var selected: Cube
+    let type: Language
+    @Binding var selected: Language
     let color: Color
     @State private var isSelected = false
     var body: some View {
         Button(action: {
             selected = type
+            UserDefaultsManager.shared.saveLanguage(leng: selected)
             HapticManager.instance.impact(style: .light)
         }) {
             ZStack {
@@ -40,6 +34,6 @@ struct CubeTypeView: View {
 
 struct CubeTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        CubeTypeView(type: .three, selected: .constant(.three), color: .blue)
+        LanguageView(type: .rus, selected: .constant(.rus), color: .blue)
     }
 }
