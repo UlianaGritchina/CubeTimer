@@ -10,6 +10,10 @@
 		0E54A3F22935DB8B008BC732 /* BestResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E54A3F12935DB8B008BC732 /* BestResultRow.swift */; };
 		0E61ED4E292DFD9D00465BD6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E61ED4D292DFD9C00465BD6 /* ButtonView.swift */; };
 		0E6454A9293CAA0A004BA096 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6454A8293CAA0A004BA096 /* LanguageManager.swift */; };
+		0E6454AB293CB44C004BA096 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6454AA293CB44C004BA096 /* SettingsViewModel.swift */; };
+		0E6454AD293CB7B4004BA096 /* StarterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6454AC293CB7B4004BA096 /* StarterViewModel.swift */; };
+		0E6454B0293CBDE1004BA096 /* BestResultRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6454AF293CBDE1004BA096 /* BestResultRowViewModel.swift */; };
+		0E6454B3293CC1F2004BA096 /* ResultRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6454B2293CC1F2004BA096 /* ResultRowViewModel.swift */; };
 		0E77BAB7292D3B4800C4086D /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77BAB6292D3B4800C4086D /* Stopwatch.swift */; };
 		0E77BAB9292D3C1D00C4086D /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */; };
 		0E89B39129364C1B0087B599 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E89B39029364C1B0087B599 /* SavedView.swift */; };
@@ -50,6 +54,11 @@
 		0E54A3F12935DB8B008BC732 /* BestResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestResultRow.swift; sourceTree = "<group>"; };
 		0E61ED4D292DFD9C00465BD6 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		0E6454A8293CAA0A004BA096 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		0E6454AA293CB44C004BA096 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		0E6454AC293CB7B4004BA096 /* StarterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterViewModel.swift; sourceTree = "<group>"; };
+		0E6454AF293CBDE1004BA096 /* BestResultRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestResultRowViewModel.swift; sourceTree = "<group>"; };
+		0E6454B2293CC1F2004BA096 /* ResultRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultRowViewModel.swift; sourceTree = "<group>"; };
+		0E6454B4293CD938004BA096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0E77BAB6292D3B4800C4086D /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		0E89B39029364C1B0087B599 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
@@ -85,6 +94,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E6454AE293CBDC7004BA096 /* BestResultRow */ = {
+			isa = PBXGroup;
+			children = (
+				0E54A3F12935DB8B008BC732 /* BestResultRow.swift */,
+				0E6454AF293CBDE1004BA096 /* BestResultRowViewModel.swift */,
+			);
+			path = BestResultRow;
+			sourceTree = "<group>";
+		};
+		0E6454B1293CC1DB004BA096 /* ResultRow */ = {
+			isa = PBXGroup;
+			children = (
+				0E97ED1C292E500A00EF4204 /* ResultRow.swift */,
+				0E6454B2293CC1F2004BA096 /* ResultRowViewModel.swift */,
+			);
+			path = ResultRow;
+			sourceTree = "<group>";
+		};
 		0E77BAB5292D3B3200C4086D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +127,7 @@
 				0EE68C8129387FF4006A0C24 /* Rows */,
 				0EE68C8229388003006A0C24 /* Buttons */,
 				0E89B39029364C1B0087B599 /* SavedView.swift */,
+				0EC45C8F293B843700EB363E /* LengView.swift */,
 				0E77BAB8292D3C1D00C4086D /* StopwatchView.swift */,
 				0E97ED1A292E4FC300EF4204 /* BackgroundView.swift */,
 			);
@@ -134,6 +162,7 @@
 		0EB444A4292663AA004A8272 /* CubeTimer */ = {
 			isa = PBXGroup;
 			children = (
+				0E6454B4293CD938004BA096 /* Info.plist */,
 				0ED46DD4292FAEE5001DD1CC /* Managers */,
 				0EB444B529267A5C004A8272 /* More */,
 				0E77BAB5292D3B3200C4086D /* Models */,
@@ -186,7 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				0EC45C8D293B7C6100EB363E /* SettingsView.swift */,
-				0EC45C8F293B843700EB363E /* LengView.swift */,
+				0E6454AA293CB44C004BA096 /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -206,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				0ED7709229379911001DA050 /* StarterView.swift */,
+				0E6454AC293CB7B4004BA096 /* StarterViewModel.swift */,
 			);
 			path = Starter;
 			sourceTree = "<group>";
@@ -213,8 +243,8 @@
 		0EE68C8129387FF4006A0C24 /* Rows */ = {
 			isa = PBXGroup;
 			children = (
-				0E97ED1C292E500A00EF4204 /* ResultRow.swift */,
-				0E54A3F12935DB8B008BC732 /* BestResultRow.swift */,
+				0E6454B1293CC1DB004BA096 /* ResultRow */,
+				0E6454AE293CBDC7004BA096 /* BestResultRow */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -300,9 +330,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E6454B0293CBDE1004BA096 /* BestResultRowViewModel.swift in Sources */,
 				0E97ED1B292E4FC300EF4204 /* BackgroundView.swift in Sources */,
 				0EB444A8292663AA004A8272 /* TimerView.swift in Sources */,
 				0EB444B729267A72004A8272 /* TimerViewModel.swift in Sources */,
+				0E6454B3293CC1F2004BA096 /* ResultRowViewModel.swift in Sources */,
 				0EC45C90293B843700EB363E /* LengView.swift in Sources */,
 				0EB444A6292663AA004A8272 /* CubeTimerApp.swift in Sources */,
 				0E97ED16292E4C7A00EF4204 /* ResultsView.swift in Sources */,
@@ -319,8 +351,10 @@
 				0E89B39129364C1B0087B599 /* SavedView.swift in Sources */,
 				0ED7709329379911001DA050 /* StarterView.swift in Sources */,
 				0E77BAB7292D3B4800C4086D /* Stopwatch.swift in Sources */,
+				0E6454AB293CB44C004BA096 /* SettingsViewModel.swift in Sources */,
 				0ED46DD6292FAEF7001DD1CC /* UserDefaultsManager.swift in Sources */,
 				0E54A3F22935DB8B008BC732 /* BestResultRow.swift in Sources */,
+				0E6454AD293CB7B4004BA096 /* StarterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +486,7 @@
 				DEVELOPMENT_TEAM = 86SKTK882J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CubeTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -486,6 +521,7 @@
 				DEVELOPMENT_TEAM = 86SKTK882J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CubeTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

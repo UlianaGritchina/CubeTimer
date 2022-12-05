@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SavedView: View {
+    var language: Language = UserDefaultsManager.shared.getLanguage()
     var body: some View {
         VStack {
             Spacer()
@@ -12,7 +13,7 @@ struct SavedView: View {
                     .background(.ultraThinMaterial)
                     .cornerRadius(20)
                     .overlay {
-                        Text("Saved")
+                        Text(getTitle())
                             .font(.headline)
                     }
                 Spacer()
@@ -21,6 +22,15 @@ struct SavedView: View {
             Spacer()
         }
     }
+    
+    func getTitle() -> String {
+        switch language {
+        case .eng: return "Saved"
+        case .rus: return "Сохранено"
+        case .spain: return "Salvado"
+        }
+    }
+    
 }
 
 struct SavedView_Previews: PreviewProvider {

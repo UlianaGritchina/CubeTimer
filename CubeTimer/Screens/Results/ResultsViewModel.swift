@@ -4,6 +4,7 @@ class ResultsViewModel: ObservableObject {
     
     @Published var results: [Result] = []
     @Published var bestResult: Result? = nil
+    @Published var language: Language = .eng
     
     var isResultsExists: Bool {
         results.count > 0
@@ -11,6 +12,26 @@ class ResultsViewModel: ObservableObject {
     
     init() {
         getResults()
+        setLanguage()
+    }
+    
+    func getMainTitle() -> String {
+        switch language {
+        case .eng: return "Rsults"
+        case .rus: return "Результаты"
+        case .spain: return "Resultados"
+        }
+    }
+    
+    func getNoResultsTitle() -> String {
+        switch language {
+        case .eng: return "No saved results"
+        case .rus: return "Нет рзультатов"
+        case .spain: return "No hay resultados"
+        }
+    }
+    func setLanguage() {
+        language = UserDefaultsManager.shared.getLanguage()
     }
     
     func getResults() {
@@ -37,12 +58,20 @@ class ResultsViewModel: ObservableObject {
             bestResult = nil
             return
         }
-    
         bestResult = lastResult
         for result in results {
-            let a = result.times[0]
-            if result.time < bestResult?.time ?? "" {
+            if result.times[0] < bestResult?.times[0] ?? 0 {
                 bestResult = result
+            } else if result.times[0] == bestResult?.times[0] ?? 0 {
+                if result.times[1] < bestResult?.times[1] ?? 0 {
+                    bestResult = result
+                } else {
+                    if result.times[1] == bestResult?.times[1] ?? 0 {
+                        if result.times[2] < bestResult?.times[2] ?? 0 {
+                            bestResult = result
+                        }
+                    }
+                }
             }
         }
     }

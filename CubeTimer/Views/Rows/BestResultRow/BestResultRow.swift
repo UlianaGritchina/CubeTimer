@@ -1,9 +1,8 @@
-
 import SwiftUI
 
 struct BestResultRow: View {
+    @StateObject var vm = BestResultRowViewModel()
     let result: Result
-    let colors: [Color] = [.red, .blue, .white, .yellow, .orange, .green]
     private let width = UIScreen.main.bounds.width
     private let height = UIScreen.main.bounds.height
     var body: some View {
@@ -16,9 +15,9 @@ struct BestResultRow: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(lineWidth: 0.7)
-                        .foregroundColor(colors.randomElement() ?? .purple)
+                        .foregroundColor(vm.colors.randomElement() ?? .purple)
                     VStack {
-                        Text("Best result")
+                        Text(vm.getTitle())
                             .font(.headline)
                         Spacer()
                         Text(result.time)
@@ -32,6 +31,9 @@ struct BestResultRow: View {
                     }
                     .padding()
                 }
+            }
+            .onAppear {
+                vm.setLanguage()
             }
     }
 }

@@ -27,11 +27,11 @@ struct TimerView: View {
                     SavedView().opacity(vm.isShowingSaveView ? 1 : 0)
                 }
                 .preferredColorScheme(.dark)
-                
             }
             .onAppear {
                 vm.getResults()
                 vm.setScrambel()
+                vm.setLanguage()
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
@@ -48,10 +48,10 @@ extension TimerView {
     
     private var buttons: some View {
         HStack {
-            ButtonView(title: "Save", color: Color("Blue"), action: vm.saveResult)
+            ButtonView(title: vm.getSaveTitle(), color: Color("green"), action: vm.saveResult)
                 .padding(.trailing)
             Spacer()
-            ButtonView(title: "Rest", color:  Color("Red"), action: vm.rest)
+            ButtonView(title: vm.getRestTitle(), color:  Color("red"), action: vm.rest)
                 .padding(.leading)
         }
         .padding(.bottom)

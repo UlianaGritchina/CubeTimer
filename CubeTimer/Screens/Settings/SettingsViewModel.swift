@@ -13,6 +13,7 @@ class SettingsViewModel: ObservableObject {
     
     init() {
         setLanguage()
+        print(UserDefaultsManager.shared.getIsScrsmbrl())
     }
     
     func saveScrubble(_ value: Bool) {
@@ -36,6 +37,14 @@ class SettingsViewModel: ObservableObject {
         case .eng: return "Language"
         case .rus: return "Язык"
         case .spain: return "Idioma"
+        }
+    }
+    
+    func getRwviewTitle() -> String {
+        switch selectedLeng {
+        case .eng: return "Evaluate"
+        case .rus: return "Оценить"
+        case .spain: return "Evaluar"
         }
     }
     

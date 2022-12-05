@@ -12,11 +12,12 @@ struct ResultsView: View {
                     noResultsMessageView
                 }
             }
-            .navigationTitle("Results")
+            .navigationTitle(vm.getMainTitle())
         }
         .onAppear {
             vm.getResults()
             vm.getBestResult()
+            vm.setLanguage()
         }
         .preferredColorScheme(.dark)
         .navigationViewStyle(StackNavigationViewStyle())
@@ -49,7 +50,7 @@ extension ResultsView {
     }
     
     private var noResultsMessageView: some View {
-        Text("No saved results")
+        Text(vm.getNoResultsTitle())
             .font(.headline)
     }
     

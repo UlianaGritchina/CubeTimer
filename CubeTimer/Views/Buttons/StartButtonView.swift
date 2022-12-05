@@ -17,10 +17,7 @@ struct StartButtonView: View {
                     .opacity(0)
                     .background(.ultraThinMaterial)
                     .clipShape(Circle())
-                    .overlay {
-                        Image(systemName: "eject.fill")
-                            .font(.title2)
-                    }
+                    .overlay { Image(systemName: "eject.fill").font(.title2) }
             }
         }
     }

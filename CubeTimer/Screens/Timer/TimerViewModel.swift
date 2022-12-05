@@ -18,6 +18,22 @@ class TimerViewModel: ObservableObject {
         setLanguage()
     }
     
+    func getSaveTitle() -> String {
+        switch language {
+        case .eng: return "Save"
+        case .rus: return "Сохранить"
+        case .spain: return"Ahorrar"
+        }
+    }
+    
+    func getRestTitle() -> String {
+        switch language {
+        case .eng: return "Rest"
+        case .rus: return "Сбросить"
+        case .spain: return "Reiniciar"
+        }
+    }
+    
     func startOrStopStopwatch() {
         isStart.toggle()
         if isStart {
@@ -72,7 +88,11 @@ class TimerViewModel: ObservableObject {
     func rest() {
         stopwatch = Stopwatch(min: 0, seconds: 0, milliseconds: 0)
         isShowingButtons = false
-        scramble = ScrambleManager.instance.getRandomScrambel()
+        if UserDefaultsManager.shared.getIsScrsmbrl() {
+            scramble = ScrambleManager.instance.getRandomScrambel()
+        } else {
+            scramble = ""
+        }
     }
     
     func saveResult() {
