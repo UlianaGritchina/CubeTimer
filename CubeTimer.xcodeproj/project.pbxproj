@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0E54A3F22935DB8B008BC732 /* BestResultRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E54A3F12935DB8B008BC732 /* BestResultRow.swift */; };
 		0E61ED4E292DFD9D00465BD6 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E61ED4D292DFD9C00465BD6 /* ButtonView.swift */; };
-		0E6454A9293CAA0A004BA096 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6454A8293CAA0A004BA096 /* LanguageManager.swift */; };
 		0E6454AB293CB44C004BA096 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6454AA293CB44C004BA096 /* SettingsViewModel.swift */; };
 		0E6454AD293CB7B4004BA096 /* StarterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6454AC293CB7B4004BA096 /* StarterViewModel.swift */; };
 		0E6454B0293CBDE1004BA096 /* BestResultRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6454AF293CBDE1004BA096 /* BestResultRowViewModel.swift */; };
@@ -53,7 +52,6 @@
 /* Begin PBXFileReference section */
 		0E54A3F12935DB8B008BC732 /* BestResultRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestResultRow.swift; sourceTree = "<group>"; };
 		0E61ED4D292DFD9C00465BD6 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
-		0E6454A8293CAA0A004BA096 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		0E6454AA293CB44C004BA096 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		0E6454AC293CB7B4004BA096 /* StarterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterViewModel.swift; sourceTree = "<group>"; };
 		0E6454AF293CBDE1004BA096 /* BestResultRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestResultRowViewModel.swift; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				0EC45C93293B865900EB363E /* ScrambleManager.swift */,
-				0E6454A8293CAA0A004BA096 /* LanguageManager.swift */,
 				0EC45C91293B84AB00EB363E /* HapticManager.swift */,
 				0ED46DD5292FAEF7001DD1CC /* UserDefaultsManager.swift */,
 			);
@@ -347,7 +344,6 @@
 				0E97ED19292E4FA400EF4204 /* Result.swift in Sources */,
 				0ED46DD3292FAD77001DD1CC /* StartButtonView.swift in Sources */,
 				0E97ED1F292E515800EF4204 /* ResultsViewModel.swift in Sources */,
-				0E6454A9293CAA0A004BA096 /* LanguageManager.swift in Sources */,
 				0E89B39129364C1B0087B599 /* SavedView.swift in Sources */,
 				0ED7709329379911001DA050 /* StarterView.swift in Sources */,
 				0E77BAB7292D3B4800C4086D /* Stopwatch.swift in Sources */,
