@@ -15,6 +15,7 @@ struct ResultRow: View {
                     Button(action: vm.showSheet) {
                         Image(systemName: "ellipsis")
                             .padding()
+                            .foregroundColor(Color("text"))
                     }
                 }
                     .padding()

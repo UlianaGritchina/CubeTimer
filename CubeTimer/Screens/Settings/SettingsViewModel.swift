@@ -13,7 +13,6 @@ class SettingsViewModel: ObservableObject {
     
     init() {
         setLanguage()
-        print(UserDefaultsManager.shared.getIsScrsmbrl())
     }
     
     func saveScrubble(_ value: Bool) {

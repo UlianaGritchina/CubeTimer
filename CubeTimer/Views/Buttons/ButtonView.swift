@@ -6,18 +6,12 @@ struct ButtonView: View {
     let action: () -> ()
     var body: some View {
         Button(action: action) {
-            RoundedRectangle(cornerRadius: 10)
+            Text(title)
+                .font(.headline)
                 .foregroundColor(color)
-                .frame(maxWidth: 300)
-                .frame(height: 45)
-                .cornerRadius(10)
-                .overlay(
-                    Text(title)
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .padding()
-                )
+                .padding(.horizontal)
         }
+        .buttonStyle(RectangelButtonStyle())
     }
 }
 

@@ -5,21 +5,23 @@ struct ResultsView: View {
     let deleteAction: () -> ()
     var body: some View {
         NavigationView {
-            VStack {
-                if  vm.isResultsExists {
-                    resultsList
-                } else {
-                    noResultsMessageView
+            ZStack {
+                BackgroundView()
+                VStack {
+                    if  vm.isResultsExists {
+                        resultsList
+                    } else {
+                        noResultsMessageView
+                    }
                 }
+                .navigationTitle(vm.getMainTitle())
             }
-            .navigationTitle(vm.getMainTitle())
         }
         .onAppear {
             vm.getResults()
             vm.getBestResult()
             vm.setLanguage()
         }
-        .preferredColorScheme(.dark)
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }

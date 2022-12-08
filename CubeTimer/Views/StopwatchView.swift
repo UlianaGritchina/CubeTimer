@@ -13,16 +13,20 @@ struct StopwatchView: View {
             Text("\(stopwatch.milliseconds)")
                 .frame(width: 80)
         }
-        .font(.system(size: 50))
+        .font(.system(size: 40, weight: .medium, design: .monospaced))
+        .foregroundColor(.blue.opacity(0.9))
         .padding()
         .background {
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(.gray)
-                .opacity(0.5)
-                .background(.ultraThinMaterial)
-                .cornerRadius(10)
+            RoundedRectangle(cornerRadius: 25)
+                .foregroundColor(Color("background"))
+                .shadow(
+                    color: Color("shadowStart"),
+                    radius: 10, x: 10, y: 10)
+                .shadow(
+                    color: Color("shadowEnd"),
+                    radius: 10, x: -5, y: -5
+                )
         }
-        
     }
 }
 

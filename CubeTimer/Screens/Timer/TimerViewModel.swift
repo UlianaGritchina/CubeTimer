@@ -18,6 +18,12 @@ class TimerViewModel: ObservableObject {
         setLanguage()
     }
     
+    func setupView() {
+        getResults()
+        setScrambel()
+        setLanguage()
+    }
+    
     func getSaveTitle() -> String {
         switch language {
         case .eng: return "Save"

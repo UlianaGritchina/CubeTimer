@@ -27,6 +27,7 @@ struct LanguageView: View {
                     .stroke()
                     .frame(width: width / 5 + 5, height: width / 5 + 5)
                     .opacity(type == selected ? 1 : 0)
+                    .foregroundColor(Color("selected"))
             }
         }
     }

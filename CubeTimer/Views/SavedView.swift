@@ -6,17 +6,17 @@ struct SavedView: View {
         VStack {
             Spacer()
             HStack {
-                Spacer()
                 Rectangle()
                     .frame(width: 150, height: 150)
-                    .opacity(0)
-                    .background(.ultraThinMaterial)
+                    .foregroundColor(Color("background"))
                     .cornerRadius(20)
+                    .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
+                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
                     .overlay {
                         Text(getTitle())
                             .font(.headline)
+                            .opacity(0.8)
                     }
-                Spacer()
             }
             Spacer()
             Spacer()
