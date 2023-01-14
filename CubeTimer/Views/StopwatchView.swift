@@ -17,15 +17,8 @@ struct StopwatchView: View {
         .foregroundColor(.blue.opacity(0.9))
         .padding()
         .background {
-            RoundedRectangle(cornerRadius: 25)
+            RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(Color("background"))
-                .shadow(
-                    color: Color("shadowStart"),
-                    radius: 10, x: 10, y: 10)
-                .shadow(
-                    color: Color("shadowEnd"),
-                    radius: 10, x: -5, y: -5
-                )
         }
     }
 }

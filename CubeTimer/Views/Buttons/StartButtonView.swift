@@ -5,10 +5,15 @@ struct StartButtonView: View {
     let width: CGFloat
     var body: some View {
         Button(action: action) {
-           Text("hold")
-                .opacity(0.7)
+            Circle()
+                .frame(width: width)
+                .foregroundColor(Color("background"))
+                .overlay {
+                    Text("Hold")
+                        .font(.headline)
+                        .foregroundColor(.blue.opacity(0.9))
+                }
         }
-        .buttonStyle(CircleButtonStyle(width: width))
     }
 }
 
@@ -17,4 +22,3 @@ struct StartButtonView_Previews: PreviewProvider {
         StartButtonView(action: { }, width: 100)
     }
 }
-

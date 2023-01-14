@@ -6,8 +6,6 @@ struct TimerView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                LinearGradient(Color.darkStart, Color.darkEnd)
-                    .ignoresSafeArea()
                 BackgroundView()
                 GeometryReader { geometry in
                     VStack {
@@ -22,6 +20,7 @@ struct TimerView: View {
                 SavedView().opacity(vm.isShowingSaveView ? 1 : 0)
             }
         }
+        .preferredColorScheme(.dark)
         .onAppear { vm.setupView() }
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -51,7 +50,7 @@ extension TimerView {
             Spacer()
             ButtonView(
                 title: vm.getRestTitle(),
-                color:  Color("red"),
+                color:  Color("Red"),
                 action: vm.rest
             )
         }
@@ -77,8 +76,6 @@ extension TimerView {
                     : geometry.size.width / 3
                 )
             }
-            .padding()
-            .padding()
         }
     }
     

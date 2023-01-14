@@ -19,9 +19,7 @@ struct StarterView: View {
                         Label("Settings", systemImage: "gear")
                     }
             }
-            BackgroundView()
-                .ignoresSafeArea()
-             
+            Color.black.ignoresSafeArea()
                 .overlay {
                     VStack {
                         Spacer()

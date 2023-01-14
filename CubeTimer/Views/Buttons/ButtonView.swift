@@ -10,8 +10,10 @@ struct ButtonView: View {
                 .font(.headline)
                 .foregroundColor(color)
                 .padding(.horizontal)
+                .frame(width: UIScreen.main.bounds.width / 3, height: 50)
         }
-        .buttonStyle(RectangelButtonStyle())
+        .background(Color("background"))
+        .cornerRadius(10)
     }
 }
 
